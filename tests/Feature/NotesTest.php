@@ -10,7 +10,7 @@ class NotesTest extends TestCase
 
     public function testNotes()
     {
-        $response = $this->getJson('/api/notes');
+        $response = $this->getJson('/notes');
 
         $response
             ->assertStatus(200);
@@ -18,7 +18,7 @@ class NotesTest extends TestCase
 
     public function testAddNote()
     {
-        $response = $this->postJson('/api/notes', ['content' => 'Lorem ipsum']);
+        $response = $this->postJson('/notes', ['content' => 'Lorem ipsum']);
 
         $response
             ->assertStatus(201);
