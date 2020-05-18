@@ -13,7 +13,15 @@ class NoteController extends Controller
      */
     public function index()
     {
-        // 
+        return '{
+              "notes": [{
+                  "created": "2020-05-18T01:01:01.000Z",
+                  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis neque vel eros congue suscipit.",
+                  "color": "000000",
+                  "x": 0.5,
+                  "y": 0.5
+              }]
+          }';
     }
 
     /**
