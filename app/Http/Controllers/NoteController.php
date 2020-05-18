@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Note;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -13,15 +14,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        return '{
-              "notes": [{
-                  "created": "2020-05-18T01:01:01.000Z",
-                  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis neque vel eros congue suscipit.",
-                  "color": "000000",
-                  "x": 0.5,
-                  "y": 0.5
-              }]
-          }';
+        return Note::get()->toJson();
     }
 
     /**
@@ -53,7 +46,7 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        return Note::find($id)->toJson();
     }
 
     /**
